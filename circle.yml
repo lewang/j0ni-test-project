@@ -2,3 +2,5 @@ machine:
   environment:
     cyvar1: bar
     cyvar2: 123
+  node:
+    version: 0.8.12
