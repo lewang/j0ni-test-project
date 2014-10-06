@@ -13,5 +13,4 @@ machine:
 
 test:
   post:
-    - mkdir artifacts
-    - echo "I am an artifact" > artifacts/artifact.txt
+    - echo "I am an artifact" > $CIRCLE_ARTIFACTS/artifact.txt
