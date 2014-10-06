@@ -2,11 +2,11 @@ machine:
   environment:
     cyvar1: bar
     cyvar2: 123
-  node:
-    version: 0.8.12
+  # node:
+    # version: 0.8.12
 
-dependencies:
-  override:
-    - lein deps
-    - npm install npm@1.4.4
-    - npm install
+# dependencies:
+  # override:
+    # - lein deps
+    # - npm install npm@1.4.4
+    # - npm install
