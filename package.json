@@ -1,0 +1,27 @@
+{
+  "name": "j0ni-test-project",
+  "version": "1.0.0",
+  "description": "A test project",
+  "main": "index.js",
+  "directories": {
+    "doc": "doc",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "./node_modules/.bin/mocha ./js-tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/j0ni/j0ni-test-project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/j0ni/j0ni-test-project/issues"
+  },
+  "homepage": "https://github.com/j0ni/j0ni-test-project",
+  "devDependencies": {
+    "mocha": "^1.21.4",
+    "should": "^4.0.4"
+  }
+}
