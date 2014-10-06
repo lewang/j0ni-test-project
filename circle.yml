@@ -10,3 +10,8 @@ machine:
     # - lein deps
     # - npm install npm@1.4.4
     # - npm install
+
+test:
+  post:
+    - mkdir artifacts
+    - echo "I am an artifact" > artifacts/artifact.txt
