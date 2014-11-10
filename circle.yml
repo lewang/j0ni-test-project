@@ -2,3 +2,7 @@ machine:
   environment:
     cyvar1: bar
     cyvar2: 123
+
+test:
+  override:
+  - "true"
