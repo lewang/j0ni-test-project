@@ -1,8 +1,20 @@
 machine:
+  services:
+  - docker
   environment:
     cyvar1: bar
     cyvar2: 123
 
+dependencies:
+  cache_directories:
+  - "~/docker"
+
+  override:
+  - if [[ -e ~/docker/image.tar ]]; then docker load -i ~/docker/image.tar; fi
+  - docker build -t circleci/elasticsearch .
+  - mkdir -p ~/docker; docker save circleci/elasticsearch > ~/docker/image.tar
+
 test:
   override:
   - "true"
+
