@@ -11,8 +11,9 @@ dependencies:
 
   override:
   - if [[ -e ~/docker/image.tar ]]; then docker load -i ~/docker/image.tar; fi
-  - docker build -t circleci/elasticsearch .
-  - mkdir -p ~/docker; docker save circleci/elasticsearch > ~/docker/image.tar
+  - docker pull learn/tutorial
+  - docker run learn/tutorial echo hello world
+  - mkdir -p ~/docker; docker save learn/tutorial > ~/docker/image.tar
 
 test:
   override:
