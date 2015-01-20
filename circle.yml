@@ -23,4 +23,5 @@ test:
     - cat /opt/influxdb/shared/config.toml
     - cat /opt/influxdb/shared/log.txt
     - cat /opt/influxdb/shared/influxdb.pid
+    - sleep 10
     - "curl -X POST 'http://localhost:8086/db?u=root&p=root' -d '{\"name\": \"shiftr-dev\"}'"
