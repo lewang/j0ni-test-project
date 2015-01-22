@@ -1,4 +1,7 @@
 machine:
+  pre:
+  - echo machine pre
+
   environment:
     cyvar1: bar
     cyvar2: 123
