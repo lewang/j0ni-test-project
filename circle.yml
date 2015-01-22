@@ -2,3 +2,13 @@ machine:
   environment:
     cyvar1: bar
     cyvar2: 123
+
+checkout:
+  pre:
+  - echo pre
+
+  override:
+  - echo override
+
+  post:
+  - echo post
