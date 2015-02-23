@@ -5,11 +5,12 @@ machine:
   node:
     version: 0.12.0
 
-# dependencies:
-  # override:
-    # - lein deps
-    # - npm install npm@1.4.4
-    # - npm install
+dependencies:
+  pre:
+  - if [ ! -e ~/nvm/versions/v0.12.0 ]; then nvm install 0.12.0; fi
+
+  cache_directories:
+  - "~/nvm/versions/v0.12.0"
 
 test:
   post:
