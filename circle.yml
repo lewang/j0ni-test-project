@@ -2,16 +2,16 @@ machine:
   environment:
     cyvar1: bar
     cyvar2: 123
-  node:
-    version: 0.12.0
+    PATH: "/home/ubuntu/nvm/versions/node/v0.12.0/bin:${PATH}"
 
 dependencies:
   pre:
-  - if [ ! -e ~/nvm/versions/v0.12.0 ]; then nvm install 0.12.0; fi
+  - "if [ ! -e ~/nvm/versions/node/v0.12.0 ]; then nvm install 0.12.0; fi"
 
   cache_directories:
-  - "~/nvm/versions/v0.12.0"
+  - "~/nvm/versions/node/v0.12.0"
 
 test:
   post:
     - echo "I am an artifact" > $CIRCLE_ARTIFACTS/artifact.txt
+    - echo "Using node version " `node --version`
