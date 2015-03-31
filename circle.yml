@@ -5,4 +5,4 @@ machine:
 
 notify:
   webhooks:
-    - http://mal.lollyshouse.net:7777/
+    - url: http://mal.lollyshouse.net:7777/
