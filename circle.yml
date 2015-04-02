@@ -6,14 +6,8 @@ machine:
     cyvar2: 123
 
 dependencies:
-  cache_directories:
-  - "~/docker"
-
   override:
-  - if [[ -e ~/docker/image.tar ]]; then docker load -i ~/docker/image.tar; fi
-  - docker pull learn/tutorial
-  - docker run learn/tutorial echo hello world
-  - mkdir -p ~/docker; docker save learn/tutorial > ~/docker/image.tar
+  - docker build .
 
 test:
   override:
