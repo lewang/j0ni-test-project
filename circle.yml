@@ -6,3 +6,9 @@ machine:
 notify:
   webhooks:
     - url: http://mal.lollyshouse.net:7777/
+
+deployment:
+  auto_push_to_upstream_development:
+    branch: zonkey
+    commands:
+    -
