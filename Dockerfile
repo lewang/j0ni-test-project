@@ -1,1 +1,1 @@
-FROM php:5.5.23-apache
+FROM j0ni/php:latest
