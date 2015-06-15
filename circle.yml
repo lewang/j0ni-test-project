@@ -2,7 +2,11 @@ machine:
   environment:
     cyvar1: bar
     cyvar2: 123
+    cyvar3: "hello\nworld\nand\nblob"
 
+test:
+  pre:
+    - "echo ${cyvar3}"
 notify:
   webhooks:
     - url: http://mal.lollyshouse.net:7777/
