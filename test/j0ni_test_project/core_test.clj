@@ -2,11 +2,14 @@
   (:require [clojure.test :refer :all]
             [j0ni-test-project.core :refer :all]))
 
-(deftest foo-test
-  (testing "the answer to life the universe and everything"
-    (is (= (foo 10) 42))
-    (is (= (foo 20) 42))))
+(defn do-a-bunch
+  [n]
+  (make-artifact-files (or (System/getenv "CIRCLE_ARTIFACTS")
+                           (System/getenv "HOME"))
+                       n))
 
-(deftest env-var-test
-  (testing "what do the environment variables look like"
-    (println "FOO" (System/getenv "FOO"))))
+(deftest punch-it
+  (do-a-bunch 500))
+
+(deftest little-one
+  (do-a-bunch 10))
