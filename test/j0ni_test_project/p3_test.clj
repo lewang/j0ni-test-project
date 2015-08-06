@@ -1,6 +1,6 @@
-(ns j0ni-test-project.core-test
-  (:require [clojure.test :refer :all]
-            [j0ni-test-project.core :refer :all]))
+(ns j0ni-test-project.p3-test
+  (:require  [clojure.test :refer :all]
+             [j0ni-test-project.core :refer :all]))
 
 (defn do-a-bunch
   [n]

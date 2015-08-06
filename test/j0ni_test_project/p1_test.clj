@@ -1,4 +1,4 @@
-(ns j0ni-test-project.core-test
+(ns j0ni-test-project.p1-test
   (:require [clojure.test :refer :all]
             [j0ni-test-project.core :refer :all]))
 
