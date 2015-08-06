@@ -1,7 +1,8 @@
 (ns j0ni-test-project.markov
   (:require [clojure.java.io :as io]
             [clojure.string :as string]
-            [com.lemonodor.pronouncing :as pronouncing]))
+            [com.lemonodor.pronouncing :as pronouncing])
+  (:import clojure.lang.ExceptionInfo))
 
 (defn load-text [fname]
   (-> fname io/resource slurp))
@@ -96,5 +97,5 @@
    (repeat
     (try
       (build-haiku corpus)
-      (catch ExceptionInfo e
+      (catch clojure.lang.ExceptionInfo e
         (str "Failed to create haiku: " (.getMessage e)))))))
