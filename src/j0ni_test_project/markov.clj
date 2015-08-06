@@ -80,12 +80,21 @@
                 (recur (take-last 2 new-acc) new-acc))))))
 
 (defn build-haiku
-  [fname]
-  (let [corpus (load-corpus fname)
-        words [(make-line corpus 7)
+  [corpus]
+  (let [words [(make-line corpus 7)
                (make-line corpus 5)
                (make-line corpus 7)]]
     (->> words
          (map (partial string/join " "))
          (string/join "\n"))))
 
+(defn build-haikus
+  ([fname n]
+   (let [corpus (load-corpus fname)]
+     (take n (build-haikus corpus))))
+  ([corpus]
+   (repeat
+    (try
+      (build-haiku corpus)
+      (catch ExceptionInfo e
+        (str "Failed to create haiku: " (.getMessage e)))))))

@@ -4,11 +4,6 @@
   (:import java.util.UUID))
 
 (defn make-artifact-files [base n]
-  (when (> n 0)
-    (try
-      (let [filename (-> (format "%s/artifact-test-%s.txt" base (UUID/randomUUID)))
-            haiku (markov/build-haiku "source-material")]
-        (spit filename haiku))
-      (catch clojure.lang.ExceptionInfo e
-        (println "Error making haiku" (.getMessage e)))) 
-    (recur base (- n 1))))
+  (doseq [haiku (markov/build-haikus "source-material" n)]
+    (let [filename (format "%s/artifact-test-%s.txt" base (UUID/randomUUID))]
+      (spit filename haiku))))
