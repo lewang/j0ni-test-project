@@ -7,6 +7,8 @@ machine:
 test:
   pre:
     - "echo ${cyvar3}"
+    - "parallel --version"
+
 notify:
   webhooks:
     - url: http://mal.lollyshouse.net:7777/
